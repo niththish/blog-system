@@ -1,0 +1,148 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+#ad-banner {
+  width: 100%;
+  height: 250px;
+  margin: auto;
+}
+
+#ad-banner .single-ad {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.content .polls-list {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.polls-list .poll {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  height: 150px;
+}
+
+hr {
+  width: 90%;
+  margin: auto;
+}
+
+.poll .left {
+  width: 20%;
+  margin-right: 10px;
+}
+
+.poll .left img {
+  width: 100%;
+  height: 100%;
+}
+
+.poll .right {
+  width: 80%;
+  position: relative;
+}
+
+.poll .right > * {
+  margin-bottom: 10px;
+}
+
+.poll .right a {
+  text-decoration: none;
+  background-color: #139447;
+  color: #fff;
+  border: 0;
+  padding: 5px 10px;
+  position: absolute;
+  margin-bottom: 0;
+  bottom: 0;
+}
+
+#poll-question {
+  letter-spacing: 1.1px;
+  word-spacing: 3px;
+  font-weight: bold;
+}
+
+#poll-created-time {
+  font-size: 0.8rem;
+}
+
+.content .ads {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ads .single-ad {
+  padding: 10px;
+  margin: auto;
+  width: 80%;
+  height: 200px;
+}
+
+.single-ad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#share-btn,
+.poll .left img,
+#poll-question {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #ad-banner {
+    width: 90%;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .content .polls-list {
+    width: 100%;
+  }
+  .poll .left {
+    width: 40%;
+  }
+  .poll .right {
+    width: 60%;
+  }
+  .polls-list .poll {
+    height: 100px;
+  }
+  .poll .left img {
+    height: 100%;
+  }
+
+  .content .ads {
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  #ad-banner {
+    width: 100%;
+  }
+  .polls-list .poll {
+    margin: 10px 0;
+    padding: 0;
+  }
+  .ads .single-ad {
+    padding: 5px;
+    width: 90%;
+  }
+}

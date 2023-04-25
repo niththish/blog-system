@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="left-content">
+    <img
+      *ngFor="let _ of [1, 2, 3, 4]"
+      src="../../assets/images/google-ads.jpg"
+      alt=""
+    />
+  </div>
+  <div class="center">
+    <div class="filter" [formGroup]="filterBlogs">
+      <label for="">filter </label>
+      <select formControlName="selectValue" (change)="filter()">
+        <option value="all" selected>all</option>
+        <option value="news">news</option>
+        <option value="cinema">cinema</option>
+        <option value="education">education</option>
+        <option value="review">review</option>
+      </select>
+    </div>
+    <div class="blogs">
+      <div
+        class="blog"
+        *ngFor="let blog of blogs"
+        (click)="openBlog(blog._id, blog)"
+      >
+        <div class="left">
+          <img [src]="blog.image_url" alt="" />
+        </div>
+        <div class="right">
+          <h3>{{ blog.title }}</h3>
+          <p>{{ blog.content }}</p>
+        </div>
+      </div>
+
+      <p class="invalid" *ngIf="blogs && blogs.length == 0">
+        no blogs present for the selected category
+      </p>
+    </div>
+  </div>
+  <div class="right-content">
+    <img
+      *ngFor="let _ of [1, 2, 3, 4]"
+      src="../../assets/images/google-ads.jpg"
+      alt=""
+    />
+  </div>
+</div>

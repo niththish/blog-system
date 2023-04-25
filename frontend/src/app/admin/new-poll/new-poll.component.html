@@ -1,0 +1,50 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <form
+    class="form"
+    [formGroup]="pollForm"
+    (ngSubmit)="uploadPoll()"
+    novalidate
+  >
+    <div class="field">
+      <input
+        type="text"
+        placeholder="enter poll question"
+        formControlName="question"
+      />
+    </div>
+    <div class="field">
+      <div class="image-section">
+        <img [src]="url" alt="" />
+      </div>
+      <input
+        type="file"
+        accept="image/png, image/gif, image/jpeg, image/jpg, image/webp"
+        (change)="onChange($event)"
+      />
+    </div>
+    <div class="field">
+      <input
+        type="text"
+        placeholder="poll option 1"
+        formControlName="option1"
+      />
+      <input
+        type="text"
+        placeholder="poll option 2"
+        formControlName="option2"
+      />
+    </div>
+
+    <div class="field">
+      <button type="submit" [disabled]="pollForm.invalid">UPLOAD POLL</button>
+    </div>
+    <p class="response" *ngIf="uploadStatus">
+      {{ uploadStatus }}
+    </p>
+    <p class="error" *ngIf="errorStatus">
+      {{ errorStatus }}
+    </p>
+  </form>
+</div>

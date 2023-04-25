@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.container .left-content,
+.container .right-content {
+  width: 25%;
+}
+
+.container .left-content img,
+.container .right-content img {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.container .center {
+  width: 75%;
+}
+
+.bottom_ad {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.urls .nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.blogs {
+  width: 100%;
+  margin: 25px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: 45%;
+  height: 150px;
+  margin: 15px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.blog .left {
+  width: 35%;
+  height: 100%;
+}
+
+.left img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog .right {
+  margin-left: 10px;
+  padding: 5px;
+  width: 65%;
+  overflow: hidden;
+}
+
+.right h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.right p {
+  padding: 2px;
+  text-overflow: ellipsis;
+}
+
+.filter {
+  width: 100%;
+  margin: 25px auto;
+  text-align: right;
+}
+
+.invalid {
+  padding: 10px;
+  color: #ff0000;
+  text-align: center;
+}
+select {
+  cursor: pointer;
+  background-color: #e1ffef;
+  font-weight: bold;
+  border: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .left-content,
+  .container .right-content {
+    width: 100%;
+    display: flex;
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blogs {
+    width: 90%;
+  }
+  .blog {
+    width: 100%;
+  }
+  .container .center {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  .blogs {
+    width: 95%;
+  }
+  .blog {
+    margin: 15px 0;
+  }
+  .container .center {
+    width: 95%;
+  }
+}

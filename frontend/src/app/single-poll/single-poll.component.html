@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <!-- ad banner supports 1 image -->
+  <div id="ad-banner">
+    <div class="single-ad">
+      <img id="img1" src="../../assets/images/google-ads.jpg" alt="" />
+    </div>
+  </div>
+  <!-- end of ad banner supports 1 image -->
+
+  <div class="content">
+    <!-- single poll voting -->
+    <div class="poll-content">
+      <div class="single-poll" *ngIf="poll">
+        <p id="poll-question">{{ poll.question }}</p>
+        <div class="poll-body">
+          <div class="left">
+            <img [src]="poll.image_url" alt="" />
+          </div>
+          <div class="right">
+            <div
+              [hidden]="voted"
+              (click)="setSelected(option1, option2, 1)"
+              #option1
+              id="option1"
+            >
+              {{ poll.option1 }}
+            </div>
+            <div
+              [hidden]="voted"
+              (click)="setSelected(option2, option1, 2)"
+              #option2
+              id="option2"
+            >
+              {{ poll.option2 }}
+            </div>
+            <div class="result">
+              <p>
+                {{ poll.option1 }} - <span>{{ poll.option1Count }} users</span>
+              </p>
+              <p>
+                {{ poll.option2 }} - <span>{{ poll.option2Count }} users</span>
+              </p>
+            </div>
+            <div>
+              <p class="voted" *ngIf="voted">you voted in this poll</p>
+            </div>
+            <button
+              [hidden]="voted"
+              id="vote"
+              [disabled]="!isVotedSelected"
+              (click)="vote(poll._id)"
+            >
+              Vote
+            </button>
+            <button id="share" (click)="share(poll._id)">
+              share on whatsapp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of single poll voting -->
+
+    <!-- right side ad section -->
+    <div class="ads">
+      <div class="single-ad" *ngFor="let _ of [1, 2, 3]">
+        <img src="../../assets/images/google-ads.jpg" alt="" />
+      </div>
+    </div>
+    <!-- end of right side ad section -->
+  </div>
+</div>

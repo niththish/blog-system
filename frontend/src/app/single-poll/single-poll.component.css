@@ -1,0 +1,189 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+#ad-banner {
+  width: 100%;
+  height: 250px;
+  margin: auto;
+}
+
+#ad-banner .single-ad {
+  width: 100%;
+  height: 100%;
+}
+
+.single-ad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.content .poll-content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.content .comment {
+  width: 75%;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment > * {
+  padding: 10px;
+  margin: 15px;
+}
+
+#message {
+  resize: none;
+  height: 100px;
+}
+
+#post-comment {
+  background-color: #139447;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+#poll-question {
+  margin-bottom: 25px;
+  letter-spacing: 1.1px;
+  word-spacing: 3px;
+  font-weight: bold;
+}
+
+.single-poll .poll-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.poll-body .left {
+  width: 40%;
+}
+
+.poll-body .right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+#option1,
+#option2,
+.voted {
+  background-color: #e1ffef;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#vote,
+#share {
+  margin: 10px;
+  padding: 10px;
+  width: 75%;
+  align-self: center;
+  background-color: #139447;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.poll-body .left img {
+  width: 100%;
+  height: 100%;
+}
+
+.content .ads {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ads .single-ad {
+  padding: 10px;
+  margin: auto;
+  width: 80%;
+  height: 200px;
+}
+
+.result {
+  padding: 10px;
+}
+
+.result p,
+.voted {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.result p span,
+.voted {
+  font-weight: 600;
+  color: #139447;
+}
+
+.selected {
+  border: 2px solid #139447;
+}
+
+@media screen and (max-width: 768px) {
+  #ad-banner {
+    width: 90%;
+  }
+  .content {
+    flex-direction: column;
+  }
+
+  .content .poll-content {
+    width: 100%;
+  }
+  .content .ads {
+    margin-top: 25px;
+    width: 100%;
+  }
+  .single-poll .poll-body {
+    flex-direction: column;
+  }
+  .poll-body .left {
+    width: 100%;
+  }
+
+  .poll-body .right {
+    width: 100%;
+  }
+  .content .comment {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  #ad-banner {
+    width: 100%;
+  }
+  .content .poll-content {
+    margin: 10px 0;
+    padding: 0;
+  }
+  .ads .single-ad {
+    padding: 5px;
+    width: 90%;
+  }
+
+  #option1,
+  #option2 {
+    margin: 10px 5px;
+  }
+}

@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin: 50px auto;
+  max-width: 600px;
+  width: 90%;
+}
+
+.form .field {
+  width: 100%;
+}
+
+.field input {
+  background-color: #e1ffef;
+  font-weight: bold;
+  border: none;
+}
+
+.field button {
+  border: none;
+  color: #fff;
+  background-color: #139447;
+  cursor: pointer;
+}
+
+.invalid {
+  padding: 10px;
+  color: #ff0000;
+}
+
+.errorResponse {
+  text-align: center;
+}
+
+.form .field > input,
+.field button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}

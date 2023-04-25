@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <!-- ad banner supports 1 image -->
+  <div id="ad-banner">
+    <div class="single-ad">
+      <img id="img1" src="../../assets/images/google-ads.jpg" alt="" />
+    </div>
+  </div>
+  <!-- end of ad banner supports 1 image -->
+
+  <div class="content">
+    <!-- displaying list of polls -->
+    <div class="polls-list">
+      <!-- single poll content -->
+      <div *ngFor="let poll of polls" class="poll">
+        <div class="left">
+          <img
+            [routerLink]="['/polls', poll._id]"
+            [src]="poll.image_url"
+            alt=""
+          />
+        </div>
+        <div class="right">
+          <p [routerLink]="['/polls', poll._id]" id="poll-question">
+            {{ poll.question }}
+          </p>
+          <a (click)="share(poll._id)" target="_blank" id="share-btn"
+            >share on whatsapp</a
+          >
+        </div>
+      </div>
+      <!-- end of single poll content -->
+    </div>
+    <!-- end of displaying polls list -->
+
+    <!-- right side ad section -->
+    <div class="ads">
+      <div class="single-ad" *ngFor="let _ of [1, 2, 3, 4]">
+        <img src="../../assets/images/google-ads.jpg" alt="" />
+      </div>
+    </div>
+    <!-- end of right side ad section -->
+  </div>
+</div>

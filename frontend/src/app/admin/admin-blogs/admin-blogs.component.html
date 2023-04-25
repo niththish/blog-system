@@ -1,0 +1,34 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <div class="filter" [formGroup]="filterBlogs">
+    <label for="">filter </label>
+    <select formControlName="selectValue" (change)="filter()">
+      <option value="all" selected>all</option>
+      <option value="news">news</option>
+      <option value="cinema">cinema</option>
+      <option value="education">education</option>
+      <option value="review">review</option>
+    </select>
+  </div>
+
+  <div class="blogs">
+    <div class="blog" *ngFor="let blog of blogs">
+      <div class="left">
+        <img [src]="blog.image_url" alt="" />
+      </div>
+      <div class="right">
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.content }}</p>
+      </div>
+      <i
+        class="favicon fa fa-trash"
+        (click)="deleteBlog(blog._id)"
+        aria-hidden="true"
+      ></i>
+    </div>
+    <p class="invalid" *ngIf="blogs && blogs.length == 0">
+      no blogs present for the selected category
+    </p>
+  </div>
+</div>

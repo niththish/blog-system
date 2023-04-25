@@ -1,0 +1,44 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+    <div class="field">
+      <input
+        type="text"
+        placeholder="enter username"
+        formControlName="username"
+      />
+      <p
+        class="invalid"
+        *ngIf="userName?.touched && userName?.errors?.['required']"
+      >
+        username required
+      </p>
+      <p
+        class="invalid"
+        *ngIf="userName?.touched && userName?.errors?.['pattern']"
+      >
+        must be alphabet characters (minimum 4chars)
+      </p>
+    </div>
+    <div class="field">
+      <input
+        type="password"
+        placeholder="enter password"
+        formControlName="password"
+      />
+      <p
+        class="invalid"
+        *ngIf="password?.touched && password?.errors?.['required']"
+      >
+        password required
+      </p>
+    </div>
+    <div class="field">
+      <button [disabled]="loginForm.invalid" type="submit">LOGIN</button>
+    </div>
+    <p class="invalid errorResponse" *ngIf="errorResponse">
+      {{ errorResponse }}
+    </p>
+  </form>
+</div>

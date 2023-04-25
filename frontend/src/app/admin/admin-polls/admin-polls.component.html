@@ -1,0 +1,25 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+  <div class="polls">
+    <div class="poll" *ngFor="let poll of polls">
+      <div class="left">
+        <img [src]="poll.image_url" alt="" />
+      </div>
+      <div class="right">
+        <h5>{{ poll.question }}</h5>
+        <p>
+          {{ poll.option1 }} : <span>{{ poll.option1Count }}</span>
+        </p>
+        <p>
+          {{ poll.option2 }} : <span>{{ poll.option2Count }}</span>
+        </p>
+      </div>
+      <i
+        class="favicon fa fa-trash"
+        aria-hidden="true"
+        (click)="deletePoll(poll._id)"
+      ></i>
+    </div>
+    <p class="invalid" *ngIf="polls && polls.length == 0">no polls present</p>
+  </div>
+</div>

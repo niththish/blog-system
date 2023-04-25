@@ -1,0 +1,19 @@
+<nav class="nav">
+  <div>
+    <h1>Website Name</h1>
+    <button (click)="logout()">logout</button>
+  </div>
+</nav>
+
+<nav class="urls" *ngIf="!hideUrl">
+  <div class="nav-links">
+    <a [routerLink]="['/admin/blogs']" routerLinkActive="active">blogs</a>
+    <a [routerLink]="['/admin/polls']" routerLinkActive="active">polls</a>
+    <a [routerLink]="['/admin/new-blog']" routerLinkActive="active"
+      >create blog</a
+    >
+    <a [routerLink]="['/admin/new-poll']" routerLinkActive="active"
+      >create poll</a
+    >
+  </div>
+</nav>
