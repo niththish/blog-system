@@ -1,8 +1,8 @@
 # blog-system
-1) [stack details](https://github.com/niththish/pizza-store-app/blob/main/README.md#stack-detail)
-2) [backend requirements](https://github.com/niththish/pizza-store-app/blob/main/README.md#requirements-in-backend-folder)
-3) [api endpoints](https://github.com/niththish/pizza-store-app/blob/main/README.md#api-endpoints)
-4) [application routing](https://github.com/niththish/pizza-store-app/blob/main/README.md#application-routing)
+1) [stack details](https://github.com/niththish/blog-system/blob/main/README.md#stack-detail)
+2) [backend requirements](https://github.com/niththish/blog-system/blob/main/README.md#requirements-in-backend-folder)
+3) [api endpoints](https://github.com/niththish/blog-system/blob/main/README.md#api-endpoints)
+4) [application routing](https://github.com/niththish/blog-system/blob/main/README.md#application-routing)
 ***
 
 ## stack detail
