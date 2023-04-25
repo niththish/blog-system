@@ -41,7 +41,7 @@ export class PollService {
   }
 
   deletePoll(_id: string) {
-    const url = `${environment.api_url}/poll/${_id}`;
+    const url = `${environment.api_url}/admin/poll/${_id}`;
     return this.http.delete(url);
   }
 }
