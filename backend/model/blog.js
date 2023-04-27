@@ -17,6 +17,10 @@ const blogSchema = mongoose.Schema({
     type: String,
     required: [true, "blog content required"],
   },
+  createdAt: {
+    type: Date,
+    required: [true, "blog created time reruired"],
+  },
 });
 
 module.exports = mongoose.model("blogs", blogSchema);

@@ -1,4 +1,6 @@
+const fs = require("fs/promises");
 const blogSchema = require("../model/blog");
+const dirname = require("../base_dir");
 
 const CreateBlogController = async (req, res, next) => {
   const { title, category, content, type } = req.body;
@@ -8,19 +10,33 @@ const CreateBlogController = async (req, res, next) => {
   }
 
   const image_url = `${process.env.fILE_SERVER}/images/${type}/${req.file.filename}`;
-  const blog = await blogSchema.create({ title, category, content, image_url });
+  const createdAt = Date.now();
+  const blog = await blogSchema.create({
+    title,
+    category,
+    content,
+    image_url,
+    createdAt,
+  });
   if (blog) res.json({ status: "created new blog successfully" });
   else return next("unable to create a new blog post");
 };
 
 const ViewBlogsController = async (req, res, next) => {
-  const blogs = await blogSchema.find();
+  const blogs = await blogSchema.find().sort({ createdAt: -1 });
   res.json({ data: blogs });
 };
 
 const deleteBlogController = async (req, res, next) => {
   const { id } = req.params;
-  const blog = await blogSchema.deleteOne({ _id: id });
+  const blog = await blogSchema.findOneAndDelete({ _id: id });
+
+  const folder = blog.image_url.split("/");
+  const fileName = folder[folder.length - 1];
+  const type = folder[folder.length - 2];
+  const image_url = `${dirname}/public/images/${type}/${fileName}`;
+  await fs.unlink(image_url);
+
   if (blog) res.json({ status: "deleted blog successfully" });
   else return next("unable to delete the requested blog post");
 };
