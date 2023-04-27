@@ -24,16 +24,22 @@
 ## API ENDPOINTS
 #### `backend`
 
-| method  | url                       | functionality                       |
-| ------- | -------------             | -----------------------             |
-| `POST`  | /admin/login              | login admin user                    |
-| `POST`  | /admin/verify-login       | verifies whether admin is logged in |
-| `POST`  | /admin/new-blog           | create a new blog post              |
-| `POST`  | /admin/new-poll           | create a new poll                   |
-| `GET`   | /admin/blogs              | get all blog posts                  |
-| `GET`   | /admin/polls              | get all polls                       |
-| `DELETE`| /admin/blog/:id           | deletes a paricular blog post       |
-| `DELETE`| /admin/poll/:id           | deletes a paticular poll            |
+| method  | url                           | functionality                       |
+| ------- | -------------                 | -----------------------             |
+| `POST`  | /admin/login                  | login admin user                    |
+| `POST`  | /admin/verify-login           | verifies whether admin is logged in |
+| `POST`  | /admin/new-blog               | create a new blog post              |
+| `POST`  | /admin/new-poll               | create a new poll                   |
+| `GET`   | /admin/blogs                  | get all blog posts (admin)          |
+| `GET`   | /admin/polls                  | get all polls (admin)               |
+| `GET`   | /blogs                        | get all blog posts (user)           |
+| `GET`   | /polls                        | get all polls (user)                |
+| `GET`   | /poll/:id                     | get all sinlge poll                 |
+| `GET`   | /poll/verify/:id              | check vote received from current ip |
+| `PATCH` | /poll/:id                     | to cast vote for the poll           |
+| `PATCH` | /poll/:id/comment             | to add comment for the single poll  |
+| `DELETE`| /admin/blog/:id               | deletes a paricular blog post       |
+| `DELETE`| /admin/poll/:id               | deletes a paticular poll            |
 
 ## APPLICATION ROUTING
 #### `frontend`
