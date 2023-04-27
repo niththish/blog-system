@@ -11,6 +11,10 @@
     <div class="blogs">
       <div class="blog">
         <h3>{{ blog.title }}</h3>
+        <p class="createdTime">
+          Posted at:-
+          <span>{{ blog.createdAt | date : "dd MMM yyyy hh:mm a" }}</span>
+        </p>
         <div class="image">
           <img [src]="blog.image_url" alt="" />
         </div>

@@ -15,6 +15,7 @@ export class NewPollComponent implements OnInit {
   pollForm: FormGroup;
   uploadStatus!: string;
   errorStatus!: string;
+  totalOption!: number;
 
   constructor(
     private fb: FormBuilder,
@@ -26,6 +27,8 @@ export class NewPollComponent implements OnInit {
       question: [, Validators.required],
       option1: [, Validators.required],
       option2: [, Validators.required],
+      option3: [],
+      option4: [],
       image: [null],
     });
   }
@@ -42,6 +45,10 @@ export class NewPollComponent implements OnInit {
     });
   }
 
+  totalOptions(e: any) {
+    this.totalOption = parseInt(e.value);
+  }
+
   onChange(event: any) {
     this.file = event.target.files[0];
     this.pollForm.patchValue({ image: this.file });
@@ -55,11 +62,14 @@ export class NewPollComponent implements OnInit {
   }
 
   uploadPoll() {
-    const { question, option1, option2, image } = this.pollForm.value;
+    const { question, option1, option2, option3, option4, image } =
+      this.pollForm.value;
     const formData = new FormData();
     formData.append('question', question);
     formData.append('option1', option1);
     formData.append('option2', option2);
+    formData.append('option3', option3);
+    formData.append('option4', option4);
     formData.append('type', 'poll');
     formData.append('image', image);
 

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PollService } from '../service/poll.service';
 import { ActivatedRoute } from '@angular/router';
 import { Poll } from '../interface/poll.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-single-poll',
@@ -13,15 +14,33 @@ export class SinglePollComponent implements OnInit {
   isVotedSelected: boolean = false;
   voted: boolean = false;
   poll!: Poll;
+  comment: FormGroup;
 
   constructor(
     private pollService: PollService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private fb: FormBuilder
+  ) {
+    this.comment = fb.group({
+      name: [, Validators.required],
+      comment: [, Validators.required],
+    });
+  }
 
   ngOnInit(): void {
     this.getSinglePoll();
     this.isVoted();
+  }
+
+  uploadComment(id: string) {
+    const comment = this.comment.value;
+    this.pollService.addComment(id, comment).subscribe({
+      next: (resp) => {
+        this.comment.reset();
+        this.getSinglePoll();
+      },
+      error: (err) => {},
+    });
   }
 
   getSinglePoll() {
@@ -34,11 +53,19 @@ export class SinglePollComponent implements OnInit {
     });
   }
 
-  setSelected(option1: HTMLElement, option2: HTMLElement, selected: number) {
+  setSelected(
+    option1: HTMLElement,
+    option2: HTMLElement,
+    option3: HTMLElement,
+    option4: HTMLElement,
+    selected: number
+  ) {
     this.selectedOption = selected;
     this.isVotedSelected = true;
     option1.classList.add('selected');
     option2.classList.remove('selected');
+    option3.classList.remove('selected');
+    option4.classList.remove('selected');
   }
 
   vote(_id: string) {

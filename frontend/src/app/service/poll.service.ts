@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { PollResponse, Poll } from '../interface/poll.interface';
+import { PollResponse, Poll, Comment } from '../interface/poll.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +18,11 @@ export class PollService {
   getPolls(): Observable<PollResponse> {
     const url = `${environment.api_url}/admin/polls`;
     return this.http.get<PollResponse>(url);
+  }
+
+  addComment(id: string, data: Comment) {
+    const url = `${environment.api_url}/poll/${id}/comment`;
+    return this.http.patch(url, data);
   }
 
   getUserPolls(): Observable<PollResponse> {

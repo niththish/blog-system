@@ -19,6 +19,7 @@
       </div>
       <div class="right">
         <h3>{{ blog.title }}</h3>
+        <h6>{{ blog.createdAt | date : "dd MMM yyyy hh:mm a" }}</h6>
         <p>{{ blog.content }}</p>
       </div>
       <i

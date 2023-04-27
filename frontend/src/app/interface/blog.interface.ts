@@ -8,4 +8,5 @@ export interface Blog {
   category: string;
   image_url: string;
   content: string;
+  createdAt: Date;
 }

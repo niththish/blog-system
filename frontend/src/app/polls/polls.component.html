@@ -31,6 +31,9 @@
         </div>
       </div>
       <!-- end of single poll content -->
+      <p class="invalid" *ngIf="polls && polls.length == 0">
+        no polls available
+      </p>
     </div>
     <!-- end of displaying polls list -->
 

@@ -104,6 +104,12 @@ hr {
   cursor: pointer;
 }
 
+.invalid {
+  padding: 10px;
+  color: #ff0000;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   #ad-banner {
     width: 90%;

@@ -13,6 +13,12 @@
         <p>
           {{ poll.option2 }} : <span>{{ poll.option2Count }}</span>
         </p>
+        <p *ngIf="poll.option3">
+          {{ poll.option3 }} : <span>{{ poll.option3Count }}</span>
+        </p>
+        <p *ngIf="poll.option4">
+          {{ poll.option4 }} : <span>{{ poll.option4Count }}</span>
+        </p>
       </div>
       <i
         class="favicon fa fa-trash"

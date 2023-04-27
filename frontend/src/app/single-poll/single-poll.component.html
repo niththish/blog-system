@@ -21,7 +21,7 @@
           <div class="right">
             <div
               [hidden]="voted"
-              (click)="setSelected(option1, option2, 1)"
+              (click)="setSelected(option1, option2, option3, option4, 1)"
               #option1
               id="option1"
             >
@@ -29,11 +29,27 @@
             </div>
             <div
               [hidden]="voted"
-              (click)="setSelected(option2, option1, 2)"
+              (click)="setSelected(option2, option1, option3, option4, 2)"
               #option2
               id="option2"
             >
               {{ poll.option2 }}
+            </div>
+            <div
+              [hidden]="voted || !poll.option3"
+              (click)="setSelected(option3, option1, option2, option4, 3)"
+              #option3
+              id="option3"
+            >
+              {{ poll.option3 }}
+            </div>
+            <div
+              [hidden]="voted || !poll.option4"
+              (click)="setSelected(option4, option1, option2, option3, 4)"
+              #option4
+              id="option4"
+            >
+              {{ poll.option4 }}
             </div>
             <div class="result">
               <p>
@@ -41,6 +57,12 @@
               </p>
               <p>
                 {{ poll.option2 }} - <span>{{ poll.option2Count }} users</span>
+              </p>
+              <p *ngIf="poll.option3">
+                {{ poll.option3 }} - <span>{{ poll.option3Count }} users</span>
+              </p>
+              <p *ngIf="poll.option4">
+                {{ poll.option4 }} - <span>{{ poll.option4Count }} users</span>
               </p>
             </div>
             <div>
@@ -57,6 +79,33 @@
             <button id="share" (click)="share(poll._id)">
               share on whatsapp
             </button>
+          </div>
+        </div>
+      </div>
+      <form
+        class="comments"
+        [formGroup]="comment"
+        (ngSubmit)="uploadComment(poll._id)"
+        novalidate
+      >
+        <h3>Write a Comment</h3>
+        <input type="text" placeholder="name" formControlName="name" />
+        <textarea
+          name=""
+          placeholder="message"
+          formControlName="comment"
+        ></textarea>
+        <button type="submit" id="addcomment">add comment</button>
+      </form>
+      <h3>comments</h3>
+      <div class="view-comments" *ngIf="poll">
+        <div *ngFor="let comment of poll.comments">
+          <div class="single-comment">
+            <p>
+              <i class="usericon fa fa-user-circle" aria-hidden="true"></i>
+              <span id="username">{{ comment.name }}</span>
+            </p>
+            <p id="usercomment">{{ comment.comment }}</p>
           </div>
         </div>
       </div>

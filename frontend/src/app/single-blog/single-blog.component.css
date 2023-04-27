@@ -47,6 +47,14 @@
   position: relative;
 }
 
+.createdTime {
+  width: 80%;
+  margin: auto !important;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: right;
+}
+
 .blog > * {
   margin: 10px;
 }
@@ -96,6 +104,10 @@
   }
   .container .center {
     width: 100%;
+  }
+  .blog .image,
+  .createdTime {
+    width: 95%;
   }
 }
 

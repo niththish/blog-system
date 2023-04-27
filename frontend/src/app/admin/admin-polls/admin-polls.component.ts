@@ -37,6 +37,7 @@ export class AdminPollsComponent implements OnInit {
       next: (resp) => {
         this.Polls = resp.data;
         this.polls = this.Polls;
+        console.log(this.polls);
       },
     });
   }
