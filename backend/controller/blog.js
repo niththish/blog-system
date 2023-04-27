@@ -35,7 +35,9 @@ const deleteBlogController = async (req, res, next) => {
   const fileName = folder[folder.length - 1];
   const type = folder[folder.length - 2];
   const image_url = `${dirname}/public/images/${type}/${fileName}`;
-  await fs.unlink(image_url);
+  try {
+    await fs.unlink(image_url);
+  } catch (err) {}
 
   if (blog) res.json({ status: "deleted blog successfully" });
   else return next("unable to delete the requested blog post");
