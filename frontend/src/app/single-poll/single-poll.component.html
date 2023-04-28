@@ -97,6 +97,11 @@
         ></textarea>
         <button type="submit" id="addcomment">add comment</button>
       </form>
+      <div class="ad-below-comment">
+        <div class="single-ad" *ngFor="let _ of [1, 2]">
+          <img src="../../assets/images/google-ads.jpg" alt="" />
+        </div>
+      </div>
       <h3>comments</h3>
       <div class="view-comments" *ngIf="poll">
         <div *ngFor="let comment of poll.comments">

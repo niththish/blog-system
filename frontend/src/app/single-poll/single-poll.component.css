@@ -184,6 +184,10 @@
   border: 2px solid #139447;
 }
 
+.ad-below-comment {
+  display: flex;
+}
+
 @media screen and (max-width: 768px) {
   #ad-banner {
     width: 90%;
@@ -211,6 +215,9 @@
   }
   .content .comment {
     width: 100%;
+  }
+  .ad-below-comment {
+    flex-direction: column;
   }
 }
 

@@ -1,15 +1,20 @@
 .nav {
-  padding: 1rem;
   width: 100%;
   background-color: #139447;
   color: #fff;
+  position: relative;
 }
 .nav div {
-  width: 80%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav img {
+  width: 100%;
+  object-fit: cover;
+  height: 100px;
 }
 
 .nav div h1 {
@@ -18,6 +23,8 @@
 }
 
 .nav div a {
+  position: absolute;
+  right: 10px;
   text-decoration: none;
   text-align: center;
   padding: 5px;
@@ -25,7 +32,7 @@
   border-radius: 5px;
   border: 0;
   color: #fff;
-  background-color: #57b661;
+  background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
