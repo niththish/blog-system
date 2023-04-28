@@ -1,29 +1,28 @@
 .nav {
+  height: 100px;
+  padding: 1rem;
   width: 100%;
-  background-color: #139447;
+  background-color: #000;
   color: #fff;
   position: relative;
+  display: flex;
 }
 .nav div {
+  width: 80%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.nav img {
-  width: 100%;
-  object-fit: cover;
-  height: 100px;
+section {
+  display: flex;
 }
-
 .nav div h1 {
   text-transform: uppercase;
   letter-spacing: 1.2px;
 }
 
 .nav div a {
-  position: absolute;
   right: 10px;
   text-decoration: none;
   text-align: center;
@@ -34,6 +33,7 @@
   color: #fff;
   background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .urls {
@@ -68,13 +68,10 @@
 @media screen and (max-width: 480px) {
   .nav div {
     width: 100% !important;
-    flex-direction: column;
   }
   .nav div a {
     width: 75px;
     height: 30px;
-    bottom: 5px;
-    right: 5px;
   }
   .urls .nav-links > * {
     margin: 10px;
