@@ -1,14 +1,6 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <!-- ad banner supports 1 image -->
-  <div id="ad-banner">
-    <div class="single-ad">
-      <img id="img1" src="../../assets/images/google-ads.jpg" alt="" />
-    </div>
-  </div>
-  <!-- end of ad banner supports 1 image -->
-
   <div class="content">
     <!-- single poll voting -->
     <div class="poll-content">
@@ -82,6 +74,20 @@
           </div>
         </div>
       </div>
+
+      <h3 class="comments-header">comments</h3>
+      <div class="view-comments" *ngIf="poll">
+        <div *ngFor="let comment of poll.comments">
+          <div class="single-comment">
+            <p>
+              <i class="usericon fa fa-user-circle" aria-hidden="true"></i>
+              <span id="username">{{ comment.name }}</span>
+            </p>
+            <p id="usercomment">{{ comment.comment }}</p>
+          </div>
+        </div>
+      </div>
+
       <form
         class="comments"
         [formGroup]="comment"
@@ -97,32 +103,7 @@
         ></textarea>
         <button type="submit" id="addcomment">add comment</button>
       </form>
-      <div class="ad-below-comment">
-        <div class="single-ad" *ngFor="let _ of [1, 2]">
-          <img src="../../assets/images/google-ads.jpg" alt="" />
-        </div>
-      </div>
-      <h3>comments</h3>
-      <div class="view-comments" *ngIf="poll">
-        <div *ngFor="let comment of poll.comments">
-          <div class="single-comment">
-            <p>
-              <i class="usericon fa fa-user-circle" aria-hidden="true"></i>
-              <span id="username">{{ comment.name }}</span>
-            </p>
-            <p id="usercomment">{{ comment.comment }}</p>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- end of single poll voting -->
-
-    <!-- right side ad section -->
-    <div class="ads">
-      <div class="single-ad" *ngFor="let _ of [1, 2, 3]">
-        <img src="../../assets/images/google-ads.jpg" alt="" />
-      </div>
-    </div>
-    <!-- end of right side ad section -->
   </div>
 </div>

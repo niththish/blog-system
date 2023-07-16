@@ -4,37 +4,26 @@
   padding: 10px;
 }
 
-#ad-banner {
-  width: 100%;
-  height: 250px;
-  margin: auto;
-}
-
-#ad-banner .single-ad {
-  width: 100%;
-  height: 100%;
-}
-
-.single-ad img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .content {
   width: 100%;
   display: flex;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .content .poll-content {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   padding: 25px;
 }
 
+.comments-header {
+  margin-top: 50px;
+}
+
 .comments {
+  margin: 75px 0 0 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -157,13 +146,6 @@
   flex-direction: column;
 }
 
-.ads .single-ad {
-  padding: 10px;
-  margin: auto;
-  width: 80%;
-  height: 200px;
-}
-
 .result {
   padding: 10px;
 }
@@ -184,14 +166,7 @@
   border: 2px solid #139447;
 }
 
-.ad-below-comment {
-  display: flex;
-}
-
 @media screen and (max-width: 768px) {
-  #ad-banner {
-    width: 90%;
-  }
   .content {
     flex-direction: column;
   }
@@ -216,24 +191,13 @@
   .content .comment {
     width: 100%;
   }
-  .ad-below-comment {
-    flex-direction: column;
-  }
 }
 
 @media screen and (max-width: 458px) {
-  #ad-banner {
-    width: 100%;
-  }
   .content .poll-content {
     margin: 10px 0;
     padding: 0;
   }
-  .ads .single-ad {
-    padding: 5px;
-    width: 90%;
-  }
-
   #option1,
   #option2 {
     margin: 10px 5px;
