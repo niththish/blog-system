@@ -3,6 +3,7 @@
 2) [backend requirements](https://github.com/niththish/blog-system/blob/main/README.md#requirements-in-backend-folder)
 3) [api endpoints](https://github.com/niththish/blog-system/blob/main/README.md#api-endpoints)
 4) [application routing](https://github.com/niththish/blog-system/blob/main/README.md#application-routing)
+5) [app design](https://github.com/niththish/blog-system/blob/main/README.md#app-design)
 ***
 
 ## stack detail
@@ -56,3 +57,6 @@
 | /admin/polls        | displays all the polls with delete delete functionality   |
 | /admin/new-blog     | to create a new blog post                                 |
 | /admin/new-poll     | to create a new poll                                      |
+
+## app design
+<img src="https://raw.githubusercontent.com/niththish/Designs/main/blog%20system.png"/>
